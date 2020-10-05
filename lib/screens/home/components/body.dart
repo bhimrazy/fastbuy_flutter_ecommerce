@@ -1,7 +1,7 @@
 import 'package:fastbuy_flutter_ecommerce/constants.dart';
+import 'package:fastbuy_flutter_ecommerce/screens/home/components/icon_btn_with_counter.dart';
 import 'package:fastbuy_flutter_ecommerce/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -10,9 +10,13 @@ class Body extends StatelessWidget {
       child: SingleChildScrollView(
           child: Column(
         children: [
+          SizedBox(
+            height: getProportionateScreenWidth(20),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20)),
+              horizontal: getProportionateScreenWidth(20),
+            ),
             child: Row(
               children: [
                 Container(
@@ -38,16 +42,15 @@ class Body extends StatelessWidget {
                         )),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(12)),
-                  height: getProportionateScreenWidth(46),
-                  width: getProportionateScreenWidth(46),
-                  decoration: BoxDecoration(
-                    color: kSecondaryColor.withOpacity(0.1),
-                    shape: BoxShape.circle,
-                  ),
-                  child: SvgPicture.asset("assets/icons/Bell.svg"),
-                )
+                IconBtnWithCounter(
+                  svgSrc: "assets/icons/Cart Icon.svg",
+                  press: () {},
+                ),
+                IconBtnWithCounter(
+                  svgSrc: "assets/icons/Bell.svg",
+                  numOfItems: 3,
+                  press: () {},
+                ),
               ],
             ),
           )
